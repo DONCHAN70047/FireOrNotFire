@@ -1,14 +1,14 @@
 import os
-import base64
-import numpy as np
-import tensorflow as tf
-from flask import Flask, render_template, request, jsonify
-from werkzeug.utils import secure_filename
-from tensorflow.keras.preprocessing import image
-
 # Suppress TensorFlow warnings
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # Use CPU
+import tensorflow as tf
+import base64
+import numpy as np
+
+from flask import Flask, render_template, request, jsonify
+from werkzeug.utils import secure_filename
+from tensorflow.keras.preprocessing import image
 
 # Check if model exists
 MODEL_PATH = "model/model.h5"
