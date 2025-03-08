@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, jsonify
 from werkzeug.utils import secure_filename
-import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 import numpy as np
 import base64
@@ -8,9 +7,12 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1" 
 import tensorflow as tf
 
-model = tf.keras.models.load_model('model/model.h5')
+
+
 
 app = Flask(__name__)
+
+model = tf.keras.models.load_model('model/model.h5')
 
 UPLOAD_FOLDER = "captured_images"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -60,6 +62,6 @@ def predict():
         return jsonify({'error': 'Prediction failed'}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    port = int(os.environ.get("PORT", 10000))  # Default to 10000 if PORT is not set
-    app.run(host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 10000))  
+    app.run(host="0.0.0.0", port=port, debug=True)
+    
