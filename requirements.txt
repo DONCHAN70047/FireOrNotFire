@@ -1,11 +1,11 @@
-flask==3.1.0
-tensorflow-cpu==2.15.0
-numpy==1.26.4
-opencv-python==4.9.0.80
-matplotlib==3.8.3
-Pillow==10.2.0
-Werkzeug>=3.1.0
-gunicorn==21.2.0
-gTTS==2.5.4
-pygame==2.5.2
-requests==2.31.0
+Flask==2.2.2  # Stable version of Flask
+tensorflow-cpu==2.15.0  # Use this if you're working with CPU only
+numpy==1.26.4  # Ensure compatibility with TensorFlow
+opencv-python==4.9.0.80  # For image and video processing
+matplotlib==3.8.3  # Used for plotting graphs (if applicable)
+Pillow==10.2.0  # For image processing (required by keras)
+Werkzeug>=2.2.2  # Ensure compatibility with Flask
+gunicorn==21.2.0  # For deploying Flask app in production
+gTTS==2.5.4  # Text-to-speech (if you use it in your app)
+pygame==2.5.2  # For game functionality (if you're using this)
+requests==2.31.0  # For HTTP requests (if used in your project)
